@@ -4,13 +4,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component ({
   selector: 'meal-list',
   template: `
-  <ul *ngFor="let meal of meals | byName:nameFilter | byCal:calFilter">
-    <li>{{meal.name}}</li>
-    <li>{{meal.details}}</li>
-    <li>{{meal.calories}}</li>
-    <div class="button" (click)="setSelectedMeal(meal);toggleEditFormDisplay()">Edit</div>
+  <div *ngFor="let meal of meals | byName:nameFilter | byCal:calFilter" class="meal-info">
+    <div class="meal-name">{{meal.name}}</div>
+    <div class="meal-details">{{meal.details}}
+    <div class="meal-calories">Calories: {{meal.calories}}</div></div>
+    <div class="button meal-button" (click)="setSelectedMeal(meal);toggleEditFormDisplay()">Edit</div>
     <meal-edit *ngIf="meal===selectedMeal && editForm" [selectedMeal]="selectedMeal"></meal-edit>
-  </ul>
+  </div>
   `
 })
 

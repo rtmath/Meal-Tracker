@@ -4,6 +4,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component ({
   selector: 'meal-edit',
   template: `
+    <div class="hr"></div>
     <div>
       <label>Name</label>
       <input [(ngModel)]="selectedMeal.name">

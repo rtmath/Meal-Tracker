@@ -12,7 +12,7 @@ import { Meal } from './meal.model';
       (formDisplaySender)="toggleAddFormDisplay()" (addMealSender)="addNewMeal($event)">
     </add-meal>
   </div>
-  <hr>
+  
   <div class="content-body">
     <div class="filter-body">
       <meal-filter

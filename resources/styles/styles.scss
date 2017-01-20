@@ -1,40 +1,55 @@
-$BTNCOLOR: #4ABDAC;
-$BTNHOVER: #FC4A1A;
-$BGCOLOR: rgba(128, 192, 155, 0.7);
-$CLEAN: #DFDCE3;
-$GRAIN: #D7CEC7;
-$BLACKBOARD: #565656;
-$OXBLOOD: #76323F;
-$TAN: #C09F80;
-$GREEN: #80C09B;
+$BTNCOLOR: #a5c1cc;
+$BTNHOVER: #a5c1cc;
+$BTNBG: rgba(211, 228, 197, 0.2);
+$BGCOLOR: rgba(211,228,197, 0.7);
+$HEADER: #F0D8AC;
+$BODY: #8D2036;
+$INSET: #F0D8AC;
+$FONT: white;
+$ALTFONT: black;
+$INPUTBORDER: #a5c1cc;
+
+html {
+  background-color: $BGCOLOR;
+}
 
 .bgimg {
-  width: 100vw;
-  height: 100vh;
+  width: 99vw;
+  height: 98vh;
   background-image: url('../../resources/images/bg.jpeg');
+  background-attachment: fixed;
   .bgoverlay {
-    width: 100vw;
-    height: 100vh;
+    width: 99vw;
+    height: 98vh;
     background-color: $BGCOLOR;
   }
+}
+
+.hr {
+  height: 2px;
+  background: linear-gradient(to right, transparent, black, transparent);
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .container {
   margin-left: 5%;
   margin-right: 5%;
+  padding: 1%;
   opacity: 1;
   min-width: 1100px;
 }
 
-.header {
-  text-align: center;
-  background-color: $OXBLOOD;
+.content-body {
+  background-color: $BODY;
+  color: $FONT;
+  padding: 5%;
 }
 
 .button {
-  background-color: rgba(215, 206, 199, 0.2);
-  border: 4px solid $GRAIN;
-  color: white;
+  background-color: $BTNBG;
+  border: 4px solid $BTNCOLOR;
+  color: $FONT;
   padding: 6px 16px;
   border-radius: 18px;
   text-align: center;
@@ -45,18 +60,21 @@ $GREEN: #80C09B;
   transition-duration: 0.4s;
   cursor: pointer;
   &:hover {
-      border: 4px solid $GRAIN;
+      border: 4px solid $BTNCOLOR;
       border-radius: 18px;
-      background-color: $GRAIN;
+      background-color: $BTNCOLOR;
       color: black;
   }
 }
 
-.content-body {
-  background-color: $BLACKBOARD;
-  color: white;
+.header {
+  margin-bottom: 1%;
+  text-align: center;
+  background-color: $HEADER;
+  .button {
+    color: $ALTFONT;
+  }
 }
-
 
 meal-filter {
   display: flex;
@@ -64,7 +82,7 @@ meal-filter {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 5px;
   .filter1 {
     flex: 1 50%;
 
@@ -78,5 +96,52 @@ meal-filter {
   .filter-button {
     flex: 2 100%;
     text-align: center;
+  }
+}
+
+input {
+  border-bottom: 2px solid $INPUTBORDER;
+  background-color: inherit;
+  color: $ALTFONT;
+  font-weight: bold;
+  transition: 0.3s;
+  padding: 3px;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  &:focus {
+    outline: none;
+    border: 3px solid $INPUTBORDER;
+  }
+}
+
+.meal-info {
+  margin: 5%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: $INSET;
+  color: $ALTFONT;
+  // box-shadow: inset 1px 1px 5px 1px black;
+  padding: 15px;
+  border-radius: 10px 20px;
+  .meal-name {
+    font-weight: bold;
+    font-size: 25px;
+    flex: 1 40%;
+  }
+  .meal-details {
+    flex: 1 40%;
+  }
+  .meal-button {
+    flex: 1 1%;
+  }
+  meal-edit {
+    margin: 1%;
+    flex: 2 100%;
+    text-align: center;
+  }
+  .button {
+    color: $ALTFONT;
   }
 }
