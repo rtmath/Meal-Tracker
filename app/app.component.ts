@@ -11,9 +11,9 @@ import { Meal } from './meal.model';
     (formDisplaySender)="toggleAddFormDisplay()" (addMealSender)="addNewMeal($event)">
   </add-meal>
   <hr>
-  <div>
-    <input [(ngModel)]="filter">
-  </div>
+  <meal-filter
+    [(currentFilter)]="filter" (onChange)="filter = $event.value">
+  </meal-filter>
   <meal-list
     [meals]="meals"
     [selectedMeal]="selectedMeal"

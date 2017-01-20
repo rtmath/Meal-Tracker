@@ -6,6 +6,7 @@ import { AddMealComponent }   from './add-meal.component';
 import { MealListComponent }   from './meal-list.component';
 import { MealEditComponent }   from './meal-edit.component';
 import { CompletenessPipe } from './completeness.pipe';
+import { MealFilterComponent } from './meal-filter.component';
 
 @NgModule({
   imports: [ BrowserModule,
@@ -14,6 +15,7 @@ import { CompletenessPipe } from './completeness.pipe';
                   AddMealComponent,
                   MealListComponent,
                   MealEditComponent,
+                  MealFilterComponent,
                   CompletenessPipe ],
   bootstrap:    [ AppComponent ]
 })
