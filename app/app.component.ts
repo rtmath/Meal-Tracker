@@ -5,12 +5,17 @@ import { Meal } from './meal.model';
   selector: 'app-root',
   template: `
   <h2>Meal Tracker</h2>
-  {{meal.name}}<br>
-  {{meal.details}}<br>
-  {{meal.calories}}<br>
+  <add-meal [addNewForm]="addNewForm" (formDisplaySender)="toggleFormDisplay()"></add-meal>
+  <hr>
+
   `
 })
 
 export class AppComponent {
   meal: Meal = new Meal("Test meal", "Ate some stuff", 384);
+  addNewForm: boolean = false;
+
+  toggleFormDisplay() {
+    this.addNewForm = (this.addNewForm) ? false : true;
+  }
 }
