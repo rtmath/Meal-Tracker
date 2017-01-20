@@ -5,9 +5,18 @@ import { Meal } from './meal.model';
   selector: 'app-root',
   template: `
   <h2>Meal Tracker</h2>
-  <add-meal [addNewForm]="addNewForm" (formDisplaySender)="toggleFormDisplay()" (addMealSender)="addNewMeal($event)"></add-meal>
+  <add-meal
+    [addNewForm]="addNewForm"
+    (formDisplaySender)="toggleAddFormDisplay()" (addMealSender)="addNewMeal($event)">
+  </add-meal>
   <hr>
-  <meal-list [meals]="meals"></meal-list>
+  <meal-list
+    [meals]="meals"
+    [selectedMeal]="selectedMeal"
+    [editForm]="editForm"
+    (setSelectedMealSender)="setSelectedMeal($event)"
+    (editFormDisplaySender)="toggleEditFormDisplay()">
+  </meal-list>
   `
 })
 
@@ -16,13 +25,23 @@ export class AppComponent {
     new Meal("Chicken and brocolli", "Yum", 300),
     new Meal("Mac and cheese", "Also yummy", 350)
   ];
-  addNewForm: boolean = false;
 
-  toggleFormDisplay() {
+  addNewForm: boolean = false;
+  editForm: boolean = false;
+  selectedMeal: Meal = null;
+
+  toggleAddFormDisplay() {
     this.addNewForm = (this.addNewForm) ? false : true;
+  }
+  toggleEditFormDisplay() {
+    this.editForm = (this.editForm) ? false : true;
   }
 
   addNewMeal(meal: Meal) {
     this.meals.push(meal);
+  }
+
+  setSelectedMeal(meal: Meal) {
+    this.selectedMeal = meal;
   }
 }

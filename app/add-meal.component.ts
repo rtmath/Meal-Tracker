@@ -14,7 +14,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       <input #newCalories type="number"><br>
       <button
         (click)="toggleFormDisplay();
-        addMeal(newName.value, newDetails.value, newCalories.value)">
+        addMeal(newName.value, newDetails.value, newCalories.value);">
         Track Meal</button>
     </div>
   `
