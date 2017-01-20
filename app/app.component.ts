@@ -14,7 +14,8 @@ import { Meal } from './meal.model';
   <meal-filter
     [(currentNameFilter)]="nameFilter"
     (onNameChange)="nameFilter = $event.value"
-    (onCalChange)="calFilter = $event.value">
+    (onCalChange)="calFilter = $event.value"
+    (clearFilterSender)="clearFilter()">
   </meal-filter>
   <meal-list
     [meals]="meals"
@@ -31,7 +32,7 @@ import { Meal } from './meal.model';
 export class AppComponent {
   meals: Meal[] = [
     new Meal("Chicken and brocolli", "Yum", 300),
-    new Meal("Mac and cheese", "Also yummy", 350)
+    new Meal("Mac and cheese", "Also yummy", 650)
   ];
 
   addNewForm: boolean = false;
@@ -49,6 +50,10 @@ export class AppComponent {
 
   addNewMeal(meal: Meal) {
     this.meals.push(meal);
+  }
+
+  clearFilter() {
+    this.nameFilter = "";
   }
 
   setSelectedMeal(meal: Meal) {
