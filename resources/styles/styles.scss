@@ -3,7 +3,7 @@ $BTNHOVER: #a5c1cc;
 $BTNBG: rgba(211, 228, 197, 0.2);
 $BGCOLOR: rgba(211,228,197, 0.7);
 $HEADER: #F0D8AC;
-$BODY: #8D2036;
+$BODY: #394666;
 $INSET: #F0D8AC;
 $FONT: white;
 $ALTFONT: black;
@@ -44,6 +44,8 @@ html {
   background-color: $BODY;
   color: $FONT;
   padding: 5%;
+  border: 2px solid $HEADER;
+  border-radius: 5px;
 }
 
 .button {
@@ -71,6 +73,8 @@ html {
   margin-bottom: 1%;
   text-align: center;
   background-color: $HEADER;
+  border: 3px solid $BODY;
+  border-radius: 5px;
   .button {
     color: $ALTFONT;
   }
@@ -100,7 +104,7 @@ meal-filter {
 }
 
 input {
-  border-bottom: 2px solid $INPUTBORDER;
+  border-bottom: 3px solid $INPUTBORDER;
   background-color: inherit;
   color: $ALTFONT;
   font-weight: bold;
@@ -122,7 +126,7 @@ input {
   flex-wrap: wrap;
   background-color: $INSET;
   color: $ALTFONT;
-  // box-shadow: inset 1px 1px 5px 1px black;
+  box-shadow: inset 1px 1px 5px 1px black;
   padding: 15px;
   border-radius: 10px 20px;
   .meal-name {
@@ -136,6 +140,9 @@ input {
   .meal-button {
     flex: 1 1%;
   }
+  .meal-calories {
+    font-weight: bold;
+  }
   meal-edit {
     margin: 1%;
     flex: 2 100%;
@@ -143,5 +150,22 @@ input {
   }
   .button {
     color: $ALTFONT;
+  }
+}
+
+.new-form {
+  display: flex;
+  flex-wrap: wrap;
+  .new-meal-name {
+    flex: 1 30%;
+  }
+  .new-details-name {
+    flex: 1 30%;
+  }
+  .new-calories-name {
+    flex: 1 30%;
+  }
+  .new-meal-button {
+    flex: 2 100%;
   }
 }
