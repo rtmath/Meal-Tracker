@@ -12,13 +12,16 @@ import { Meal } from './meal.model';
   </add-meal>
   <hr>
   <meal-filter
-    [(currentFilter)]="filter" (onChange)="filter = $event.value">
+    [(currentNameFilter)]="nameFilter"
+    (onNameChange)="nameFilter = $event.value"
+    (onCalChange)="calFilter = $event.value">
   </meal-filter>
   <meal-list
     [meals]="meals"
     [selectedMeal]="selectedMeal"
     [editForm]="editForm"
-    [filter]="filter"
+    [nameFilter]="nameFilter"
+    [calFilter]="calFilter"
     (setSelectedMealSender)="setSelectedMeal($event)"
     (editFormDisplaySender)="toggleEditFormDisplay()">
   </meal-list>
@@ -34,7 +37,8 @@ export class AppComponent {
   addNewForm: boolean = false;
   editForm: boolean = false;
   selectedMeal: Meal = null;
-  filter: string = "";
+  nameFilter: string = "";
+  calFilter: string = "all";
 
   toggleAddFormDisplay() {
     this.addNewForm = (this.addNewForm) ? false : true;

@@ -5,7 +5,8 @@ import { AppComponent }   from './app.component';
 import { AddMealComponent }   from './add-meal.component';
 import { MealListComponent }   from './meal-list.component';
 import { MealEditComponent }   from './meal-edit.component';
-import { CompletenessPipe } from './completeness.pipe';
+import { NamePipe } from './name.pipe';
+import { CalPipe } from './cal.pipe';
 import { MealFilterComponent } from './meal-filter.component';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MealFilterComponent } from './meal-filter.component';
                   MealListComponent,
                   MealEditComponent,
                   MealFilterComponent,
-                  CompletenessPipe ],
+                  NamePipe,
+                  CalPipe],
   bootstrap:    [ AppComponent ]
 })
 

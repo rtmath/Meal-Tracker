@@ -2,11 +2,11 @@ import { Meal } from './meal.model';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: "completeness",
+  name: "byName",
   pure: false
 })
 
-export class CompletenessPipe implements PipeTransform {
+export class NamePipe implements PipeTransform {
   transform(a: Meal[], filter: string) {
     var output: Meal[] = [];
     for (var i = 0; i < a.length; i++) {
