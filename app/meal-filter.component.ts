@@ -4,16 +4,20 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component ({
   selector: "meal-filter",
   template: `
-  <div>
+  <div class="filter1">
     <label>Filter by food name:</label>
     <input [(ngModel)]="currentNameFilter" (ngModelChange)="changeName()">
-    <button (click)="clearFilter()">Remove Filter</button>
+  </div>
+  <div class="filter2">
     <label>Filter by calories:</label>
     <select [(ngModel)]="currentCalFilter" (ngModelChange)="changeCal()">
       <option value="all">All Foods</option>
       <option value="low">Lower Calorie Foods(<500) foods</option>
       <option value="high">Higher Calorie Foods(>500) foods</option>
     </select>
+  </div>
+  <div class="filter-button">
+    <div class="button" (click)="clearFilter()">Clear Name Filter</div>
   </div>
   `
 })

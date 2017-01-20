@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     <li>{{meal.name}}</li>
     <li>{{meal.details}}</li>
     <li>{{meal.calories}}</li>
-    <button (click)="setSelectedMeal(meal);toggleEditFormDisplay()">Edit</button>
+    <div class="button" (click)="setSelectedMeal(meal);toggleEditFormDisplay()">Edit</div>
     <meal-edit *ngIf="meal===selectedMeal && editForm" [selectedMeal]="selectedMeal"></meal-edit>
   </ul>
   `

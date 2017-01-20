@@ -4,28 +4,34 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'app-root',
   template: `
-  <h2>Meal Tracker</h2>
+  <div class="header">
+    <h2>Meal Tracker</h2>
 
-  <add-meal
-    [addNewForm]="addNewForm"
-    (formDisplaySender)="toggleAddFormDisplay()" (addMealSender)="addNewMeal($event)">
-  </add-meal>
+    <add-meal
+      [addNewForm]="addNewForm"
+      (formDisplaySender)="toggleAddFormDisplay()" (addMealSender)="addNewMeal($event)">
+    </add-meal>
+  </div>
   <hr>
-  <meal-filter
-    [(currentNameFilter)]="nameFilter"
-    (onNameChange)="nameFilter = $event.value"
-    (onCalChange)="calFilter = $event.value"
-    (clearFilterSender)="clearFilter()">
-  </meal-filter>
-  <meal-list
-    [meals]="meals"
-    [selectedMeal]="selectedMeal"
-    [editForm]="editForm"
-    [nameFilter]="nameFilter"
-    [calFilter]="calFilter"
-    (setSelectedMealSender)="setSelectedMeal($event)"
-    (editFormDisplaySender)="toggleEditFormDisplay()">
-  </meal-list>
+  <div class="content-body">
+    <div class="filter-body">
+      <meal-filter
+        [(currentNameFilter)]="nameFilter"
+        (onNameChange)="nameFilter = $event.value"
+        (onCalChange)="calFilter = $event.value"
+        (clearFilterSender)="clearFilter()">
+      </meal-filter>
+    </div>
+    <meal-list
+      [meals]="meals"
+      [selectedMeal]="selectedMeal"
+      [editForm]="editForm"
+      [nameFilter]="nameFilter"
+      [calFilter]="calFilter"
+      (setSelectedMealSender)="setSelectedMeal($event)"
+      (editFormDisplaySender)="toggleEditFormDisplay()">
+    </meal-list>
+  </div>
   `
 })
 
