@@ -7,16 +7,15 @@ import { Meal } from './meal.model';
   <h2>Meal Tracker</h2>
   <add-meal [addNewForm]="addNewForm" (formDisplaySender)="toggleFormDisplay()" (addMealSender)="addNewMeal($event)"></add-meal>
   <hr>
-  <ul *ngFor="let meal of meals">
-    <li>{{meal.name}}</li>
-    <li>{{meal.details}}</li>
-    <li>{{meal.calories}}</li>
-  </ul>
+  <meal-list [meals]="meals"></meal-list>
   `
 })
 
 export class AppComponent {
-  meals: Meal[] = [];
+  meals: Meal[] = [
+    new Meal("Chicken and brocolli", "Yum", 300),
+    new Meal("Mac and cheese", "Also yummy", 350)
+  ];
   addNewForm: boolean = false;
 
   toggleFormDisplay() {
