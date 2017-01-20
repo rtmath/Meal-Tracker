@@ -5,15 +5,20 @@ import { Meal } from './meal.model';
   selector: 'app-root',
   template: `
   <h2>Meal Tracker</h2>
+
   <add-meal
     [addNewForm]="addNewForm"
     (formDisplaySender)="toggleAddFormDisplay()" (addMealSender)="addNewMeal($event)">
   </add-meal>
   <hr>
+  <div>
+    <input [(ngModel)]="filter">
+  </div>
   <meal-list
     [meals]="meals"
     [selectedMeal]="selectedMeal"
     [editForm]="editForm"
+    [filter]="filter"
     (setSelectedMealSender)="setSelectedMeal($event)"
     (editFormDisplaySender)="toggleEditFormDisplay()">
   </meal-list>
@@ -29,6 +34,7 @@ export class AppComponent {
   addNewForm: boolean = false;
   editForm: boolean = false;
   selectedMeal: Meal = null;
+  filter: string = "";
 
   toggleAddFormDisplay() {
     this.addNewForm = (this.addNewForm) ? false : true;

@@ -4,7 +4,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component ({
   selector: 'meal-list',
   template: `
-  <ul *ngFor="let meal of meals">
+  <ul *ngFor="let meal of meals | completeness:filter">
     <li>{{meal.name}}</li>
     <li>{{meal.details}}</li>
     <li>{{meal.calories}}</li>
@@ -18,6 +18,7 @@ export class MealListComponent {
   @Input() meals: Meal[];
   @Input() selectedMeal: Meal;
   @Input() editForm: boolean;
+  @Input() filter: string;
   @Output() setSelectedMealSender = new EventEmitter();
   @Output() editFormDisplaySender = new EventEmitter();
 
