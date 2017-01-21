@@ -12,7 +12,7 @@ import { Meal } from './meal.model';
       (formDisplaySender)="toggleAddFormDisplay()" (addMealSender)="addNewMeal($event)">
     </add-meal>
   </div>
-  
+
   <div class="content-body">
     <div class="filter-body">
       <meal-filter
@@ -37,8 +37,9 @@ import { Meal } from './meal.model';
 
 export class AppComponent {
   meals: Meal[] = [
-    new Meal("Chicken and brocolli", "Yum", 300),
-    new Meal("Mac and cheese", "Also yummy", 650)
+    new Meal("Test", "Test", 300),
+    new Meal("Test", "Test", 300),
+    new Meal("Test", "Test", 300)
   ];
 
   addNewForm: boolean = false;

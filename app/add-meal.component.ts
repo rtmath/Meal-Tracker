@@ -23,7 +23,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
           (click)="toggleFormDisplay();
           addMeal(newName.value, newDetails.value, newCalories.value);">
           Track Meal</div>
+        <div class="button"
+          (click)="toggleFormDisplay();">
+          Cancel</div>
       </div>
+
+
     </div>
   `
 })

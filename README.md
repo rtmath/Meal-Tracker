@@ -28,6 +28,9 @@ This project requires:
   * AngularJS 2.0 RC6
   * SASS
 
+### Known Bugs
+ * Clicking 'Edit' while another Meal is being edited will collapse the existing edit but will not open a new one until the user clicks again.
+
 ## License
 Copyright (c) 2016 Ryan Mathisen
 
