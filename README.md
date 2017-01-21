@@ -1,6 +1,6 @@
 # Meal Tracker
 
-## by Ryan Mathisen 1/6/2017
+## by Ryan Mathisen 1/20/2017
 
 ## Description
 _This is a simple project demonstrating basic use of Angular 2.0, including concepts such as components, pipes, and two-way databinding utilizing the "data down, actions up" paradigm._
