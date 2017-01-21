@@ -37,9 +37,7 @@ import { Meal } from './meal.model';
 
 export class AppComponent {
   meals: Meal[] = [
-    new Meal("Test", "Test", 300),
-    new Meal("Test", "Test", 300),
-    new Meal("Test", "Test", 300)
+
   ];
 
   addNewForm: boolean = false;
